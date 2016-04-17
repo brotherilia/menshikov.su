@@ -1,0 +1,11 @@
+build/
+gh-pages/
+node_modules/
+bcp/
+.DS_Store
+Thumbs.db
+.idea
+*.sublime*
+*.log
+*.psd
+*.ai

@@ -1,0 +1,41 @@
+.js-linkHover > .guide {
+  animation: guide-move 0.7s forwards, vanish 3s forwards;
+}
+.js-linkHover > .menu__bgr-text {
+  animation: pulse 0.7s, flash 1s infinite;
+}
+.js-fadeAway {
+  animation: vanish 1s forwards;
+}
+.js-fadeAway1s {
+  animation: vanish 1s 1s forwards;
+}
+.js-linkChosen > .menu__main-text,
+.js-linkChosen > .menu__bgr-text {
+  animation: maxscaleaway 1s 1s forwards;
+}
+.js-scaleAway {
+  animation: minscaleaway 1s 1s forwards;
+}
+
+
+.js-eviolinPopup {
+  display: none;
+}
+.eviolin {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 500px;
+  height: 450px;
+
+  background: url("../img/eviolin.jpg");
+
+  animation: reveal 1s;
+
+  animation-fill-mode: forwards;
+}
+.js-show {
+  display: block;
+}

@@ -1,0 +1,60 @@
+@keyframes flash {
+  50% {
+    opacity: 0.15;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes guide-move {
+  100% {
+    width: 60px;
+    height: 51px;
+
+    border-top-left-radius: 100%;
+    transform: translate(0, -50px);
+    opacity: 0.1;
+  }
+}
+@keyframes vanish {
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes maxscaleaway {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+@keyframes minscaleaway {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

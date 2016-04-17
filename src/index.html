@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ilya Menshikov's Homepage</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <div class="container">
+    <main class="main">
+      <div class="guide guide--vert"></div>
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__item menu__item--astowell">
+            <a class="menu__link menu__link--astowell js-link js-commonLink" href="http://astowell.menshikov.su" onclick="url=this.href;setTimeout('location.href=url',1500);this.href='javascript:void(0)';">
+              <span class="menu__bgr-text menu__bgr-text--astowell">
+                astowell
+              </span>
+              <span class="menu__main-text menu__main-text--travels">
+                travels
+              </span>
+              <div class="guide guide--astowell"></div>
+            </a>
+          </li>
+          <li class="menu__item menu__item--portfolio">
+            <a class="menu__link menu__link--portfolio js-link js-commonLink" href="http://frontend.menshikov.su" onclick="url=this.href;setTimeout('location.href=url',1500);this.href='javascript:void(0)';">
+              <span class="menu__bgr-text menu__bgr-text--portfolio">
+                portfolio
+              </span>
+              <span class="menu__main-text menu__main-text--internet">
+                internet
+              </span>
+              <div class="guide guide--portfolio"></div>
+            </a>
+          </li>
+          <li class="menu__item menu__item--steed">
+            <a class="menu__link menu__link--steed js-link js-commonLink" href="http://hondasteed.org.ru" onclick="url=this.href;setTimeout('location.href=url',1500);this.href='javascript:void(0)';">
+              <span class="menu__bgr-text menu__bgr-text--steed">
+                hondasteed.org.ru
+              </span>
+              <span class="menu__main-text menu__main-text--moto">
+                moto
+              </span>
+              <div class="guide guide--steed"></div>
+            </a>
+          </li>
+          <li class="menu__item menu__item--music">
+            <a class="menu__link menu__link--music js-link js-eviolinLink" href="#">
+              <span class="menu__bgr-text menu__bgr-text--music">
+                music
+              </span>
+              <span class="menu__main-text menu__main-text--eviolin">
+                eviolin
+              </span>
+              <div class="guide guide--music"></div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <!--                           POPUPS                             -->
+      <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div class="eviolin js-eviolinPopup"></div>
+    </main>
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--                           FOOTER                             -->
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <footer class="page-footer">
+      <div class="vendor-info">
+        <span class="vendor-info__text">
+          created by: <a class="vendor-info__link" href="http://frontend.menshikov.su">Ilya Menshikov</a>
+        </span>
+      </div>
+    </footer>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
