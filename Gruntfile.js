@@ -1,8 +1,8 @@
 "use strict";
 
 module.exports = function(grunt) {
-  require("load-grunt-tasks")(grunt);
 
+  require("load-grunt-tasks")(grunt);
   require("time-grunt")(grunt);
 
   grunt.initConfig({
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
             "img/*.{jpg,png,svg}",
             "js/**/*.js",
             "*.html",
-            "favicon.ico"
+            "favicon.png"
           ],
           dest: "build"
         }]
@@ -32,6 +32,14 @@ module.exports = function(grunt) {
           expand: true,
           cwd: "src/",
           src: ["*.html"],
+          dest: "build"
+        }]
+      },
+      img: {
+        files: [{
+          expand: true,
+          cwd: "src/",
+          src: ["img/**/*.{png,jpg,gif,svg}"],
           dest: "build"
         }]
       },
@@ -163,8 +171,9 @@ module.exports = function(grunt) {
         bsFiles: {
           src: [
             "build/*.html",
-            "build/css/*.css"/*,
-            "build/js/*.js"*/
+            "build/css/*.css",
+            "build/img/*.{png,jpg,gif,svg}",
+            "build/js/*.js"
           ]
         },
         options: {
@@ -188,12 +197,17 @@ module.exports = function(grunt) {
         files: ["src/less/**/*.less"],
         tasks: ["less", "postcss", "csscomb", "csso"],
         options: {spawn: false}
-      }//,
-      //scripts: {
-        //files: ["src/js/**/*.js"],
-        //tasks: ["copy:js","uglify"],
-        //options: {spawn: false}
-      //}
+      },
+      images: {
+        files: ["src/img/**/*.{png,jpg,gif,svg}"],
+        tasks: ["copy:img"],
+        options: {spawn: false}
+      },
+      scripts: {
+        files: ["src/js/**/*.js"],
+        tasks: ["copy:js"],
+        options: {spawn: false}
+      }
     },
 
     //*** Отправка сборки в удаленную ветку "gh-pages" ***//
@@ -204,6 +218,36 @@ module.exports = function(grunt) {
         only: ["**/*", "!README.md"]
       },
       src: "**/*"
+    },
+
+    //*** Очистка директории на "боевом" сервере ***//
+    secret: grunt.file.readJSON("authssh.json"),
+    sshexec: {
+      clean: {
+        command: ["cd menshikov.su/www; rm -rf *"],
+        options: {
+          host: "<%= secret.host %>",
+          username: "<%= secret.username %>",
+          password: "<%= secret.password %>"
+        }
+      }
+    },
+
+    //*** Отправка сборки на "боевой" сервер ***//
+    scp: {
+      options: {
+        host: "<%= secret.host %>",
+        username: "<%= secret.username %>",
+        password: "<%= secret.password %>",
+      },
+      masterhost: {
+        files: [{
+            cwd: "build/",
+            src: "**/*",
+            filter: "isFile",
+            dest: "menshikov.su/www"
+        }]
+      }
     }
 
   });
@@ -220,5 +264,6 @@ module.exports = function(grunt) {
     //"uglify",
     //"processhtml"
   ]);
+  grunt.registerTask("deploy", ["sshexec", "scp"]);
 
 };

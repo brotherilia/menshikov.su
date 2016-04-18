@@ -1,10 +1,12 @@
 var	eviolinLink  = document.querySelector('.js-eviolinLink'),
-	  eviolinPopup = document.querySelector('.js-eviolinPopup');
+	  eviolinPopup = document.querySelector('.eviolin');
 eviolinLink.addEventListener('click', function(event) {
 	event.preventDefault();
-	eviolinPopup.classList.add('js-show');
+  eviolinPopup.classList.remove('js-hide');
+  eviolinPopup.classList.add('js-show');
 	function func() {
 		eviolinPopup.classList.remove('js-show');
+    eviolinPopup.classList.add('js-hide');
 	}
 	setTimeout(func, 1000);
 });
@@ -20,7 +22,7 @@ $(function(){
 		$(".guide--vert").addClass("js-fadeAway");
 		$(this).removeClass("js-fadeAway");
 		$(this).addClass("js-linkChosen");
-		$(".main").addClass("js-scaleAway");
-		$(".vendor-info__text").addClass("js-fadeAway1s");
+		$(".menu").addClass("js-scaleAway");
+		$(".page-footer__text").addClass("js-fadeAway1s");
 	});
 });

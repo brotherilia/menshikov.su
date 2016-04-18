@@ -1,81 +1,102 @@
-.menu__list,
-.menu__item {
-  margin: 0;
-  padding: 0;
+.menu {
+  .reset-list();
 
-  list-style: none;
-}
-.menu__item {
-  padding-bottom: 20px;
-}
-.menu__link {
-  display: block;
-  height: 80px;
-  padding-top: 56px;
+  width: 100%;
+  height: 450px;
 
-  text-decoration: none;
-}
-.menu__main-text {
-  display: block;
-  height: 24px;
+  background: #d9c198 url("../img/bg.png") no-repeat bottom left;
+  background-size: 500px 450px;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
 
-  font-size: 18px;
-  font-family: "Verdana", sans-serif;
-  color: #ffffff;
-  letter-spacing: 6px;
-}
-.menu__main-text::first-letter {
-  display: block;
+  @media @mobile-widths {
+    box-shadow: none;
+    background-image: url("../img/bg-m.png");
+  }
 
-  font-weight: bold;
-  font-size: 24px;
-  color: #1a1712;
-}
-.menu__main-text--travels::first-letter {
-  margin-right: 12px;
-  margin-left: 41px;
-}
-.menu__main-text--internet::first-letter {
-  margin-right: 14px;
-  margin-left: 41px;
-}
-.menu__main-text--moto::first-letter {
-  margin-right: 6px;
-  margin-left: 33px;
-}
-.menu__main-text--eviolin::first-letter {
-  margin-right: 11px;
-  margin-left: 37px;
-}
-.menu__bgr-text {
-  position: absolute;
-  left: 59px;
+  &__item {
+    padding-bottom: 20px;
+  }
 
-  font-weight: normal;
-  font-family: "Georgia", serif;
-  color: #000000;
-  text-transform: uppercase;
+  &__link {
+    display: block;
+    height: 80px;
+    padding-top: 56px;
 
-  opacity: 0.07;
-}
-.menu__bgr-text--astowell {
-  top: 17px;
-  left: 61px;
+    text-decoration: none;
+  }
 
-  font-size: 48px;
-}
-.menu__bgr-text--portfolio {
-  top: 127px;
+  &__main-text {
+    display: block;
+    height: 24px;
 
-  font-size: 36px;
-}
-.menu__bgr-text--steed {
-  top: 237px;
+    font-size: 18px;
+    font-family: "Verdana", sans-serif;
+    color: #ffffff;
+    letter-spacing: 6px;
+  }
 
-  font-size: 24px;
-}
-.menu__bgr-text--music {
-  top: 317px;
+  &__main-text::first-letter {
+    display: block;
 
-  font-size: 48px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1a1712;
+  }
+
+  &__main-text--travels::first-letter {
+    margin-right: 12px;
+    margin-left: 41px;
+  }
+
+  &__main-text--internet::first-letter {
+    margin-right: 14px;
+    margin-left: 41px;
+  }
+
+  &__main-text--moto::first-letter {
+    margin-right: 6px;
+    margin-left: 33px;
+  }
+
+  &__main-text--eviolin::first-letter {
+    margin-right: 11px;
+    margin-left: 37px;
+  }
+
+  &__bgr-text {
+    position: absolute;
+    left: 59px;
+
+    font-weight: normal;
+    font-family: "Georgia", serif;
+    color: #000000;
+    text-transform: uppercase;
+
+    opacity: 0.07;
+  }
+
+  &__bgr-text--astowell {
+    top: 17px;
+    left: 61px;
+
+    font-size: 48px;
+  }
+
+  &__bgr-text--portfolio {
+    top: 127px;
+
+    font-size: 36px;
+  }
+
+  &__bgr-text--steed {
+    top: 237px;
+
+    font-size: 24px;
+  }
+  &__bgr-text--music {
+    top: 317px;
+
+    font-size: 48px;
+  }
+
 }

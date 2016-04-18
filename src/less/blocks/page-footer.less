@@ -1,0 +1,34 @@
+.page-footer {
+  text-align: right;
+
+  @media @mobile-widths {
+    text-align: left;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 10px;
+    font-family: "Tahoma", sans-serif;
+    color: #999999;
+
+    @media @mobile-widths {
+      margin-left: 7px;
+    }
+  }
+
+  &__link,
+  &__link:link,
+  &__link:visited {
+    color: #666666;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    color: #000000;
+  }
+
+  &__link:active {
+    color: #cccccc;
+  }
+
+}

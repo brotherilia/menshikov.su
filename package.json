@@ -29,6 +29,8 @@
     "grunt-gh-pages": "1.1.0",
     "grunt-postcss": "0.7.2",
     "grunt-processhtml": "0.3.13",
+    "grunt-scp": "0.1.9",
+    "grunt-ssh": "0.12.9",
     "grunt-svgmin": "3.1.2",
     "grunt-svgstore": "1.0.0",
     "load-grunt-tasks": "3.4.1"
@@ -36,7 +38,9 @@
   "scripts": {
     "test": "editorconfig-tools check *",
     "build": "grunt build",
-    "deploy": "grunt build && grunt gh-pages",
+    "pages": "npm run build && grunt gh-pages",
+    "prod": "npm run build && grunt deploy",
+    "weball": "npm run build && grunt deploy && grunt gh-pages",
     "start": "npm run build && grunt serve"
   },
   "engines": {
