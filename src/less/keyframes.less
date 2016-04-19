@@ -1,6 +1,6 @@
 @keyframes flash {
   50% {
-    opacity: 0.15;
+    opacity: 0.1;
   }
 }
 
@@ -19,11 +19,20 @@
 @keyframes guide-move {
   100% {
     width: 60px;
-    height: 51px;
-
+    height: 50px;
     border-top-left-radius: 100%;
-    transform: translate(0, -50px);
     opacity: 0.1;
+  }
+}
+
+@media @mobile-landscape {
+  @keyframes guide-move {
+    100% {
+      width: 60px;
+      height: 30px;
+      border-top-left-radius: 100%;
+      opacity: 0.1;
+    }
   }
 }
 

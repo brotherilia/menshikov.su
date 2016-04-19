@@ -6,8 +6,13 @@
   margin: auto;
 
   @media @mobile-widths {
-    position: relative;
+    position: static;
     width: 100%;
   }
 
+  @media @mobile-landscape {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
 }

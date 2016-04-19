@@ -1,19 +1,34 @@
 .menu {
   .reset-list();
 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
   width: 100%;
   height: 450px;
-
-  background: #d9c198 url("../img/bg.png") no-repeat bottom left;
-  background-size: 500px 450px;
+  padding-bottom: 20px;
+  background: url("../img/bg1.png") no-repeat -100px bottom,
+              url("../img/bg2.png") no-repeat right bottom;
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
 
   @media @mobile-widths {
     box-shadow: none;
-    background-image: url("../img/bg-m.png");
+    background: url("../img/bg1.png") no-repeat -100px bottom;
+  }
+
+  @media @mobile-landscape {
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    padding-bottom: 0;
+    background: url("../img/bg1.png") no-repeat left bottom;
   }
 
   &__item {
+    position: relative;
     padding-bottom: 20px;
   }
 
@@ -21,23 +36,29 @@
     display: block;
     height: 80px;
     padding-top: 56px;
-
     text-decoration: none;
+
+    @media @mobile-landscape {
+      padding-top: 0;
+      height: 100%;
+    }
   }
 
   &__main-text {
     display: block;
     height: 24px;
-
     font-size: 18px;
     font-family: "Verdana", sans-serif;
     color: #ffffff;
     letter-spacing: 6px;
+
+    @media @mobile-landscape {
+      position: relative;
+    }
   }
 
   &__main-text::first-letter {
     display: block;
-
     font-weight: bold;
     font-size: 24px;
     color: #1a1712;
@@ -65,38 +86,23 @@
 
   &__bgr-text {
     position: absolute;
-    left: 59px;
-
+    left: 61px;
+    bottom: 30px;
+    letter-spacing: 0;
+    white-space: nowrap;
     font-weight: normal;
     font-family: "Georgia", serif;
+    font-size: 40px;
     color: #000000;
     text-transform: uppercase;
+    opacity: 0.05;
 
-    opacity: 0.07;
+    @media @mobile-landscape {
+      left: auto;
+      right: -10px;
+      bottom: -2px;
+      transform: translate(100%);
+      font-size: 30px;
+    }
   }
-
-  &__bgr-text--astowell {
-    top: 17px;
-    left: 61px;
-
-    font-size: 48px;
-  }
-
-  &__bgr-text--portfolio {
-    top: 127px;
-
-    font-size: 36px;
-  }
-
-  &__bgr-text--steed {
-    top: 237px;
-
-    font-size: 24px;
-  }
-  &__bgr-text--music {
-    top: 317px;
-
-    font-size: 48px;
-  }
-
 }

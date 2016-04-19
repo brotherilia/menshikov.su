@@ -2,9 +2,21 @@
   position: absolute;
   top: 0;
   left: 0;
-
   width: 500px;
   height: 450px;
+  background: url("../img/eviolin.jpg") no-repeat center top;
+  background-size: content;
 
-  background: url("../img/eviolin.jpg");
+  @media @mobile-widths {
+    width: 100%;
+    height: 100%;
+    background-size: content;
+  }
+
+  @media @mobile-landscape {
+    width: 100%;
+    height: 100%;
+    background-position: left bottom;
+    background-size: 250px 225px;
+  }
 }

@@ -2,8 +2,11 @@
   animation: guide-move 0.7s forwards, vanish 3s forwards;
 }
 
-.js-linkHover > .menu__bgr-text {
+.js-linkHover > .menu__main-text > .menu__bgr-text {
   animation: pulse 0.7s, flash 1s infinite;
+  @media @mobile-landscape {
+    animation: flash 1s infinite;
+  }
 }
 
 .js-fadeAway {
@@ -14,12 +17,11 @@
   animation: vanish 1s 1s forwards;
 }
 
-.js-linkChosen > .menu__main-text {
+.js-linkChosen > .menu__main-text > .menu__bgr-text {
   animation: maxscaleaway 1s 1s forwards;
-}
-
-.js-linkChosen > .menu__bgr-text {
-  animation: maxscaleaway 1s 1s forwards;
+  @media @mobile-landscape {
+    animation: maxscaleaway 1s 1s forwards;
+  }
 }
 
 .js-scaleAway {
