@@ -1,4 +1,5 @@
 .eviolin {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -14,9 +15,11 @@
   }
 
   @media @mobile-landscape {
-    width: 100%;
-    height: 100%;
-    background-position: left bottom;
+    width: 250px;
+    height: 225px;
+    background-position: left top;
     background-size: 250px 225px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    border-bottom-right-radius: 50px;
   }
 }

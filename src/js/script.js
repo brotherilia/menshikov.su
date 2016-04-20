@@ -1,28 +1,27 @@
-var	eviolinLink  = document.querySelector('.js-eviolinLink'),
-	  eviolinPopup = document.querySelector('.eviolin');
-eviolinLink.addEventListener('click', function(event) {
-	event.preventDefault();
-  eviolinPopup.classList.remove('js-hide');
-  eviolinPopup.classList.add('js-show');
-	function func() {
-		eviolinPopup.classList.remove('js-show');
-    eviolinPopup.classList.add('js-hide');
-	}
-	setTimeout(func, 1000);
-});
+$(document).ready(function() {
 
-$(function(){
-	$(".js-link").on("mouseover", function(){
-		$(this).addClass("js-linkHover");
-	}).on("mouseleave", function(){
-		$(this).removeClass("js-linkHover");
-	});
-	$(".js-commonLink").on("click", function(){
-		$(".js-link").addClass("js-fadeAway");
-		$(".guide--vert").addClass("js-fadeAway");
-		$(this).removeClass("js-fadeAway");
-		$(this).addClass("js-linkChosen");
-		$(".menu").addClass("js-scaleAway");
-		$(".page-footer__text").addClass("js-fadeAway1s");
-	});
+  $("body").css("display", "none");
+  $("body").fadeIn(2000);
+
+  $(".menu__link").on("mouseover", function(){
+    $(this).addClass("js-linkHover");
+  }).on("mouseleave", function(){
+    $(this).removeClass("js-linkHover");
+  });
+
+  $(".js-eviolinLink").on("click", function(){
+    $(".eviolin").fadeIn(500).fadeOut(500);
+  });
+
+  $(".js-commonLink").click(function(event){
+    event.preventDefault();
+    linkLocation = this.href;
+    $(this).addClass("js-fadeAway");
+    $(this).removeClass("js-fadeAway");
+    $(this).addClass("js-linkChosen");
+    $(".guide--vert").addClass("js-fadeAway");
+    $(".menu").addClass("js-scaleAway");
+    $(".page-footer__text").addClass("js-fadeAway1s");
+  });
+
 });
