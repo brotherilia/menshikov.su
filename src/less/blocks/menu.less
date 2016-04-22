@@ -2,13 +2,8 @@
   .reset-list();
 
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
   width: 100%;
   height: 450px;
-  padding-bottom: 20px;
   background: url("../img/bg1.png") no-repeat -100px bottom,
               url("../img/bg2.png") no-repeat right bottom;
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
@@ -22,20 +17,26 @@
     box-shadow: none;
     height: 100%;
     min-height: 280px;
-    padding-bottom: 0;
     background: url("../img/bg1.png") no-repeat left bottom;
   }
 
   &__item {
-    position: relative;
     padding-bottom: 20px;
+
+    @media @mobile-landscape {
+      height: 25%;
+    }
   }
 
   &__link {
-    display: block;
+    position: relative;
+    display: table;
     height: 80px;
     padding-top: 56px;
+    padding-left: 30px;
     text-decoration: none;
+    font-size: 0;
+    cursor: pointer;
 
     @media @mobile-landscape {
       padding-top: 0;
@@ -43,54 +44,41 @@
     }
   }
 
-  &__main-text {
-    display: block;
-    height: 24px;
+  &__text {
+    display: table-cell;
+    vertical-align: bottom;
     font-size: 18px;
-    font-family: "Verdana", sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     color: #ffffff;
     letter-spacing: 6px;
+    line-height: 0;
+    user-select: none;
 
     @media @mobile-landscape {
       position: relative;
     }
   }
 
-  &__main-text::first-letter {
-    display: block;
+  &__text-dropcap {
+    display: inline-block;
+    width: 30px;
+    margin-right: 10px;
     font-weight: bold;
     font-size: 24px;
     color: #1a1712;
-  }
-
-  &__main-text--travels::first-letter {
-    margin-right: 12px;
-    margin-left: 41px;
-  }
-
-  &__main-text--internet::first-letter {
-    margin-right: 14px;
-    margin-left: 41px;
-  }
-
-  &__main-text--moto::first-letter {
-    margin-right: 6px;
-    margin-left: 33px;
-  }
-
-  &__main-text--eviolin::first-letter {
-    margin-right: 11px;
-    margin-left: 37px;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
   }
 
   &__bgr-text {
     position: absolute;
     left: 61px;
-    bottom: 30px;
+    bottom: 40px;
     letter-spacing: 0;
     white-space: nowrap;
     font-weight: normal;
-    font-family: "Georgia", serif;
+    font-family: Georgia, serif;
     font-size: 40px;
     color: #000000;
     text-transform: uppercase;
@@ -99,7 +87,7 @@
     @media @mobile-landscape {
       left: auto;
       right: -10px;
-      bottom: -2px;
+      bottom: 20px;
       transform: translate(100%);
       font-size: 30px;
     }

@@ -1,16 +1,21 @@
 .guide {
   position: absolute;
-  bottom: 19px;
+  bottom: 0;
   left: 0;
   height: 1px;
-  width: 200%;
+  width: 150%;
   background: linear-gradient(to right, #000000, transparent 100%);
-  opacity: 0.07;
+  opacity: 0.1;
 
   &--vert {
-    bottom: 0;
+    z-index: 1;
+    top: 0;
     left: 60px;
     width: 1px;
     height: 450px;
+
+    @media @mobile-landscape {
+      height: 100%;
+    }
   }
 }

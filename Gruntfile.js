@@ -107,31 +107,7 @@ module.exports = function(grunt) {
       }
     },
 
-    //*** Сборка SVG-спрайта ***//
-    svgstore: {
-      options: {
-        svg: {
-          style: "display: none"
-        }
-      },
-      sprite: {
-        files: {
-          "src/img/sprite.svg": ["src/img/sprite/*.svg"]
-        }
-      }
-    },
-
-    //*** Минификация SVG ***//
-    svgmin: {
-      allsvg: {
-        files: [{
-          expand: true,
-          src: ["build/img/**/*.svg"]
-        }]
-      }
-    },
-
-    //*** Минификация остальной графики ***//
+    //*** Минификация графики ***//
     imagemin: {
       images: {
         options: {
@@ -152,15 +128,6 @@ module.exports = function(grunt) {
       scripts: {
         files: {
           "build/js/script.min.js": ["build/js/script.js"]
-        }
-      }
-    },
-
-    //*** Сборка и обработка HTML-файлов ***//
-    processhtml: {
-      target: {
-        files: {
-          "build/index.html": ["build/index.html"]
         }
       }
     },
@@ -190,7 +157,7 @@ module.exports = function(grunt) {
     watch: {
       html: {
         files: ["src/*.html"],
-        tasks: ["copy:html"/*, "processhtml"*/],
+        tasks: ["copy:html"],
         options: {spawn: false}
       },
       style: {
@@ -259,10 +226,8 @@ module.exports = function(grunt) {
     "clean",
     "copy:build",
     "css",
-    //"svg",
-    //"imagemin",
-    //"uglify",
-    //"processhtml"
+    "imagemin",
+    "uglify"
   ]);
   grunt.registerTask("deploy", ["sshexec", "scp"]);
 
