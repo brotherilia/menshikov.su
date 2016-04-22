@@ -1,7 +1,6 @@
+.grunt/
 build/
-gh-pages/
 node_modules/
-bcp/
 authssh.json
 .DS_Store
 Thumbs.db
