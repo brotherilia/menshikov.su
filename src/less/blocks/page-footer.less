@@ -1,7 +1,7 @@
 .page-footer {
   text-align: right;
 
-  @media @mobile-widths {
+  @media @mobile-portrait {
     text-align: left;
   }
 
@@ -11,7 +11,7 @@
     font-family: Tahoma, Geneva, sans-serif;
     color: #999999;
 
-    @media @mobile-widths {
+    @media @mobile-portrait {
       margin-left: 7px;
     }
 
@@ -27,6 +27,14 @@
   &__link:visited {
     color: #666666;
     text-decoration: none;
+
+    @media @mobile-portrait {
+      cursor: default;
+    }
+
+    @media @mobile-landscape {
+      cursor: default;
+    }
   }
 
   &__link:hover {

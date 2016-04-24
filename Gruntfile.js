@@ -67,11 +67,8 @@ module.exports = function(grunt) {
       options: {
         processors: [
           require("autoprefixer")({browsers: [
-            "last 1 version",
-            "last 2 Chrome versions",
-            "last 2 Firefox versions",
-            "last 2 Opera versions",
-            "last 2 Edge versions"
+            "last 2 versions",
+            "> 1%"
           ]}),
           require("css-mqpacker")({
             sort: true
@@ -172,7 +169,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ["src/js/**/*.js"],
-        tasks: ["copy:js"],
+        tasks: ["copy:js", "uglify"],
         options: {spawn: false}
       }
     },

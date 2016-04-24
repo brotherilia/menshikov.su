@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function(){
 
   $(".menu__link").on("mouseover", function(){
     $(this).addClass("js-linkHover");
@@ -11,12 +11,17 @@ $(function() {
   });
 
   $(".js-commonLink").click(function(event){
-    $(this).addClass("js-linkChosen");
+    event.preventDefault();
+    var linkLocation = this.href;
+    var linkId = $(this).attr("id");
+    $("#"+linkId).addClass("js-linkChosen");
     $(".menu__link").addClass("js-fadeAway");
-    $(this).removeClass("js-fadeAway");
+    $("#"+linkId).removeClass("js-fadeAway");
     $(".guide").addClass("js-fadeAway");
     $(".menu").addClass("js-scaleAway");
     $(".page-footer__text").addClass("js-fadeAway1s");
+    setTimeout (function(){
+      window.location = linkLocation;
+    }, 1500);
   });
-
 });
