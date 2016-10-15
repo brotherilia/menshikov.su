@@ -1,0 +1,28 @@
+.cross-button {
+  .icon-size();
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  @media @mobile-landscape {
+    cursor: default;
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  @media @mobile-portrait {
+    cursor: default;
+    top: 430px;
+    right: 20px;
+  }
+
+  &:active {
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}

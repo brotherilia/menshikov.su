@@ -1,0 +1,40 @@
+.css-icon {
+  .center-both();
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  /////*** ANOTHER CHURCH ***/////
+
+  &--church1 {
+    .icon-size(@icon-size * 0.8, @icon-size * 0.6);
+    .offset(@icon-size * 0.3, 0);
+    border: @icon-size * 0.35 solid @icon-color;
+    border-bottom: none;
+    border-top-left-radius: @icon-size * 0.2;
+    border-top-right-radius: @icon-size * 0.2;
+
+    &::before {
+      .icon-size(@icon-size * 0.4, @icon-size * 0.3);
+      .offset(-@icon-size * 0.5, -@icon-size * 0.15);
+      border-top-left-radius: @icon-size * 0.2;
+      border-top-right-radius: @icon-size * 0.2;
+      background-color: @icon-color;
+    }
+
+    &::after {
+      .icon-size(@icon-size * 0.2, @icon-size * 0.2);
+      .center-hor();
+      .offset(-@icon-size * 0.7, -@icon-size * 0.055);
+      background: linear-gradient(to right, transparent, transparent 35%, @icon-color 35%, @icon-color 65%, transparent 65%, transparent 100%), linear-gradient(to bottom, transparent, transparent 40%, @icon-color 40%, @icon-color 60%, transparent 60%, transparent 100%);
+    }
+  }
+}

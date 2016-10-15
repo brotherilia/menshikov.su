@@ -18,7 +18,7 @@
     @media @mobile-landscape {
       position: absolute;
       bottom: 5px;
-      right: 7px;
+      right: 20px;
     }
   }
 
@@ -39,6 +39,14 @@
 
   &__link:hover {
     color: #000000;
+
+    @media @mobile-portrait {
+      color: #666666;
+    }
+
+    @media @mobile-landscape {
+      color: #666666;
+    }
   }
 
   &__link:active {
