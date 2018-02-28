@@ -6,17 +6,29 @@
   right: 20px;
   cursor: pointer;
 
+  &--house {
+    top: 60px;
+  }
+
   @media @mobile-landscape {
     cursor: default;
     top: auto;
     bottom: 20px;
     right: 20px;
+
+    &--house {
+      right: 60px;
+    }
   }
 
   @media @mobile-portrait {
     cursor: default;
     top: 430px;
     right: 20px;
+
+    &--house {
+      right: 60px;
+    }
   }
 
   &:active {

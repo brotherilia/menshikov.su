@@ -18,6 +18,7 @@ $(document).ready(function(){
     $(".menu__link").addClass("js-fadeAway");
     $("#"+linkId).removeClass("js-fadeAway");
     $("#christendom").addClass("js-fadeAway");
+    $("#house").addClass("js-fadeAway");
     $(".guide").addClass("js-fadeAway");
     $(".menu").addClass("js-scaleAway");
     $(".page-footer__text").addClass("js-fadeAway1s");

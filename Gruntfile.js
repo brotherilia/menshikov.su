@@ -174,14 +174,6 @@ module.exports = function(grunt) {
       }
     },
 
-    //*** Отправка сборки в удаленную ветку "gh-pages" ***//
-    "gh-pages": {
-      options: {
-        base: "build"
-      },
-      src: "**/*"
-    },
-
     //*** Очистка директории на "боевом" сервере ***//
     secret: grunt.file.readJSON("authssh.json"),
     sshexec: {
